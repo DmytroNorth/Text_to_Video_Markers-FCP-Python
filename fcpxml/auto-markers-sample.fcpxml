@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+
+<fcpxml version="1.9">
+    <resources>
+        <format id="r1" name="FFVideoFormat1080p30" frameDuration="100/3000s" width="1920" height="1080" colorSpace="1-1-1 (Rec. 709)"/>
+        <media id="r2" name="auto-markers-clip" uid="5u1+KImDT+yzkrtQRCiuOw" modDate="2021-07-03 12:07:34 -0700">
+            <sequence duration="28500/3000s" format="r1" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                <spine>
+                    <asset-clip name="ocean" offset="0s" ref="r3" duration="1540/600s" audioRole="dialogue" format="r4" tcFormat="NDF"/>
+                    <asset-clip name="tugboat" offset="1540/600s" ref="r5" duration="20800/3000s" audioRole="dialogue" format="r6" tcFormat="NDF">
+                        <conform-rate scaleEnabled="0"/>
+                    </asset-clip>
+                </spine>
+            </sequence>
+        </media>
+        <asset id="r3" name="ocean" uid="F13BD2413D8AEE843AD4C03F3C15EF7D" start="0s" duration="1540/600s" hasVideo="1" format="r4" hasAudio="1" audioSources="1" audioChannels="1" audioRate="44100">
+            <media-rep kind="original-media" sig="F13BD2413D8AEE843AD4C03F3C15EF7D" src="file:///Users/dmytrokryvonog/Documents/DAT/gda/auto-edit-proj/assets/ocean.mov">
+                <bookmark>Ym9va2QDAAAAAAQQMAAAAP6VCwQxZ6e1bf4DT7LKnkoYyWRoQHwSeBZIACkK1fhoYAIAAAQAAAADAwAAABgAKAUAAAABAQAAVXNlcnMAAAAOAAAAAQEAAGRteXRyb2tyeXZvbm9nAAAJAAAAAQEAAERvY3VtZW50cwAAAAMAAAABAQAAREFUAAMAAAABAQAAZ2RhAA4AAAABAQAAYXV0by1lZGl0LXByb2oAAAYAAAABAQAAYXNzZXRzAAAJAAAAAQEAAG9jZWFuLm1vdgAAACAAAAABBgAAEAAAACAAAAA4AAAATAAAAFgAAABkAAAAfAAAAIwAAAAIAAAABAMAACZgAAAAAAAACAAAAAQDAAAkmgAAAAAAAAgAAAAEAwAA5G8BAAAAAAAIAAAABAMAAIApgAAAAAAACAAAAAQDAACqdbkAAAAAAAgAAAAEAwAAqblGAQAAAAAIAAAABAMAAEu6RgEAAAAACAAAAAQDAAA8t0YBAAAAACAAAAABBgAAyAAAANgAAADoAAAA+AAAAAgBAAAYAQAAKAEAADgBAAAIAAAAAAQAAEHDR8xJWnVaGAAAAAECAAABAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMAAAYAAAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxlOi8vLwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAAAIcROQAAAAgAAAAABAAAQcHeRIAAAAAkAAAAAQEAADMyRjg4MTZELUNGRjQtNDJFMy04OUFFLTVEQTg1NzNGNEQ2MBgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAAAAAAAEFAADMAAAA/v///wEAAAAAAAAAEAAAAAQQAACgAAAAAAAAAAUQAABIAQAAAAAAABAQAACAAQAAAAAAAEAQAABwAQAAAAAAAAIgAABMAgAAAAAAAAUgAAC8AQAAAAAAABAgAADMAQAAAAAAABEgAAAAAgAAAAAAABIgAADgAQAAAAAAABMgAADwAQAAAAAAACAgAAAsAgAAAAAAADAgAABYAgAAAAAAAAHAAACgAQAAAAAAABHAAAAgAAAAAAAAABLAAACwAQAAAAAAABDQAAAEAAAAAAAAAA==</bookmark>
+            </media-rep>
+            <metadata>
+                <md key="com.apple.proapps.studio.rawToLogConversion" value="0"/>
+                <md key="com.apple.proapps.spotlight.kMDItemProfileName" value="HD (1-1-1)"/>
+                <md key="com.apple.proapps.studio.cameraISO" value="0"/>
+                <md key="com.apple.proapps.studio.cameraColorTemperature" value="0"/>
+                <md key="com.apple.proapps.spotlight.kMDItemCodecs">
+                    <array>
+                        <string>AAC</string>
+                        <string>H.264</string>
+                    </array>
+                </md>
+                <md key="com.apple.proapps.mio.ingestDate" value="2021-07-03 12:06:37 -0700"/>
+            </metadata>
+        </asset>
+        <format id="r4" name="FFVideoFormat3840x2160p30" frameDuration="20/600s" width="3840" height="2160" colorSpace="1-1-1 (Rec. 709)"/>
+        <asset id="r5" name="tugboat" uid="AD55817908C5E109B63DD2F45D28C4D7" start="0s" duration="628069/90000s" hasVideo="1" format="r6" hasAudio="1" audioSources="1" audioChannels="2" audioRate="48000">
+            <media-rep kind="original-media" sig="AD55817908C5E109B63DD2F45D28C4D7" src="file:///Users/dmytrokryvonog/Documents/DAT/gda/auto-edit-proj/assets/tugboat.mp4">
+                <bookmark>Ym9va2QDAAAAAAQQMAAAAOOMj6OUSYNE9QQ2TnLU0Cm4vjlfNpbE/EF4X/cpDhefYAIAAAQAAAADAwAAABgAKAUAAAABAQAAVXNlcnMAAAAOAAAAAQEAAGRteXRyb2tyeXZvbm9nAAAJAAAAAQEAAERvY3VtZW50cwAAAAMAAAABAQAAREFUAAMAAAABAQAAZ2RhAA4AAAABAQAAYXV0by1lZGl0LXByb2oAAAYAAAABAQAAYXNzZXRzAAALAAAAAQEAAHR1Z2JvYXQubXA0ACAAAAABBgAAEAAAACAAAAA4AAAATAAAAFgAAABkAAAAfAAAAIwAAAAIAAAABAMAACZgAAAAAAAACAAAAAQDAAAkmgAAAAAAAAgAAAAEAwAA5G8BAAAAAAAIAAAABAMAAIApgAAAAAAACAAAAAQDAACqdbkAAAAAAAgAAAAEAwAAqblGAQAAAAAIAAAABAMAAEu6RgEAAAAACAAAAAQDAABryUYBAAAAACAAAAABBgAAyAAAANgAAADoAAAA+AAAAAgBAAAYAQAAKAEAADgBAAAIAAAAAAQAAEHDKnWF9K9GGAAAAAECAAABAAAAAAAAAA8AAAAAAAAAAAAAAAAAAAAIAAAABAMAAAYAAAAAAAAABAAAAAMDAAD1AQAACAAAAAEJAABmaWxlOi8vLwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAAAIcROQAAAAgAAAAABAAAQcHeRIAAAAAkAAAAAQEAADMyRjg4MTZELUNGRjQtNDJFMy04OUFFLTVEQTg1NzNGNEQ2MBgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAAAAAAAAEFAADMAAAA/v///wEAAAAAAAAAEAAAAAQQAACgAAAAAAAAAAUQAABIAQAAAAAAABAQAACAAQAAAAAAAEAQAABwAQAAAAAAAAIgAABMAgAAAAAAAAUgAAC8AQAAAAAAABAgAADMAQAAAAAAABEgAAAAAgAAAAAAABIgAADgAQAAAAAAABMgAADwAQAAAAAAACAgAAAsAgAAAAAAADAgAABYAgAAAAAAAAHAAACgAQAAAAAAABHAAAAgAAAAAAAAABLAAACwAQAAAAAAABDQAAAEAAAAAAAAAA==</bookmark>
+            </media-rep>
+            <metadata>
+                <md key="com.apple.proapps.studio.rawToLogConversion" value="0"/>
+                <md key="com.apple.proapps.spotlight.kMDItemProfileName" value="HD (1-1-1)"/>
+                <md key="com.apple.proapps.studio.cameraISO" value="0"/>
+                <md key="com.apple.proapps.studio.cameraColorTemperature" value="0"/>
+                <md key="com.apple.proapps.spotlight.kMDItemCodecs">
+                    <array>
+                        <string>'avc1'</string>
+                        <string>AAC</string>
+                    </array>
+                </md>
+                <md key="com.apple.proapps.mio.ingestDate" value="2021-07-03 12:06:37 -0700"/>
+            </metadata>
+        </asset>
+        <format id="r6" frameDuration="3011/90000s" width="1920" height="1080" colorSpace="1-1-1 (Rec. 709)"/>
+    </resources>
+    <library location="file:///Users/dmytrokryvonog/Documents/fcp_lbr/auto-markers.fcpbundle/">
+        <event name="main" uid="3EB5B7F2-1DE0-4AA3-BA20-0F9030DDE147">
+            <project name="auto-markers" uid="73FB0C79-029B-4682-8FC3-D83549E6F71D" modDate="2021-07-03 12:18:30 -0700">
+                <sequence duration="28500/3000s" format="r1" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+                    <spine>
+                        <ref-clip name="auto-markers-clip" offset="0s" ref="r2" duration="28500/3000s">
+                            <marker start="19/15s" duration="100/3000s" value="marker1 name"/>
+                            <marker start="73/30s" duration="100/3000s" value="marker2 name"/>
+                            <marker start="131/30s" duration="100/3000s" value="marker3 notcompl" completed="0"/>
+                            <marker start="27/5s" duration="100/3000s" value="marker4 name completed" completed="1"/>
+                            <chapter-marker start="209/30s" duration="100/3000s" value="chapter marker title" posterOffset="708165/720000s"/>
+                        </ref-clip>
+                    </spine>
+                </sequence>
+            </project>
+        </event>
+    </library>
+</fcpxml>
