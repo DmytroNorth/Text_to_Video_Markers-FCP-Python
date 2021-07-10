@@ -1,96 +1,64 @@
 #!/usr/bin/env python
 
-from os import write
 import re
 from datetime import datetime, timedelta
-import os.path
 
 # intializing .txt file with a list of markers
 mrk = open('markers.txt')
 mrk = mrk.read()
 
 # intializing .fcpxml file with at least 1 marker
-fcpx = open('import.fcpxml')
-fcpx = fcpx.read()
+fcp = open('import.fcpxml')
+fcp = fcp.read()
 
-# Finding timecode and wrap with special symbols "~" and "#"
-find0 = '(\d{1,2}:\d{1,2}:\d{1,2}|\d{1,2}:\d{1,2})'
-repl0 = '~\\1#'
-str1 = re.sub(find0, repl0, mrk) 
+# moving lines without timecode to previous line
+pat1 = r'\n(^\D+?$)'
+repl1 = ' \\1'
+mrk1 = re.sub(pat1, repl1, mrk, flags=re.MULTILINE) 
 
-#Add '00' hours
-find1 = '~(\d{1,2}:\d{1,2}\#)'
-repl1 = '~00:\\1'
-str2 = re.sub(find1, repl1, str1) 
+# moving text from before the timecode to after the timecode
+pat2 = r'(^\D+?) (\d{1,2}:\d{1,2}:\d{1,2}|\d{1,2}:\d{1,2})(.*)'
+repl2 = '\\2 \\1\\3'
+mrk2 = re.sub(pat2, repl2, mrk1, flags=re.MULTILINE) 
 
-#Add 0 to single digit hours
-find2 = '~(\d:\d{1,2}:\d{1,2}\#)'
-repl2 = '~0\\1'
-str3 = re.sub(find2, repl2, str2) 
-
-#Add 0 to single digit minutes
-find3 = '(~\d{1,2}:)(\d:\d{1,2}#)'
-repl3 = '\g<1>0\\2'
-str4 = re.sub(find3, repl3, str3) 
-
-#Add 0 to single digit seconds
-find4 = '(~\d{1,2}:\d{1,2}:)(\d#)'
-repl4 = '\g<1>0\\2'
-str5 = re.sub(find4, repl4, str4) 
-
-#Find lines of text without timecode and move it to the line above
-find5 = '(\D*)\n(\D*\n)'
-repl5 = '\\1 \\2'
-str6 = re.sub(find5, repl5, str5) 
-
-# Find non digit characters at the beginning of the
-# line and move them past the first timecode,
-# while removing most of ~, # characters and separating
-# timecode and text with tab
-find6 = '(^\D*)(~)(\d{2}:\d{2}:\d{2})(# )(.*)'
-repl6 = '\\3 \\1\\5'
-str7 = re.sub(find6, repl6, str6, flags=re.MULTILINE) 
-
-#Remove remaining ~, # symbols
-find7 = '~|#'
-repl7 = ''
-str8 = re.sub(find7, repl7, str7) 
+# puting '00:' hours in where hours are missing
+pat3 = r'(^|\n| )(\d{1,2}:\d{1,2})( .*)'
+repl3 = '\g<1>00:\\2\\3'
+mrk3 = re.sub(pat3, repl3, mrk2, flags=re.MULTILINE) 
 
 # converting %H:%M:%S to total seconds
-find8 = r'(\d{2}:\d{2}:\d{2})'
-
-def repl8_converted_to_seconds(timestamp):
+pat4 = r'(\d{1,2}:\d{1,2}:\d{1,2})'
+def repl4_converted_to_seconds(timestamp):
     timestamp = timestamp.group()
     dt = datetime.strptime(timestamp, '%H:%M:%S')
     delta = timedelta(hours=dt.hour, minutes=dt.minute, seconds=dt.second)
     return str(delta.seconds)
+mrk4 = re.sub(pat4, repl4_converted_to_seconds, mrk3)
 
-str9 = re.sub(find8, repl8_converted_to_seconds, str8)
+# pulling first instance of <marker> line from fcpxml
+pat5 = r'.*?<marker.*?>'
+fcp1 = re.search(pat5, fcp) 
+fcp1 = fcp1.group()
 
-#pull first instance of <marker> line
-find10 = '<marker.*?>'
-str11 = re.search(find10, fcpx) 
-str12 = str11.group()
+# assigning varibles to <marker> parts of syntax
+pat6 = r'(.*start=").*?(".*value=").*?(".*)'
+repl5 = '\\1'
+repl6 = '\\2'
+repl7 = '\\3'
+fcp2 = re.sub(pat6, repl5, fcp1)
+fcp3 = re.sub(pat6, repl6, fcp1)
+fcp4 = re.sub(pat6, repl7, fcp1)
 
-#assigns varibles to <marker> syntax
-find11 = '(.*start=").*?(".*value=").*?(".*)'
-repl11 = '\\1'
-repl12 = '\\2'
-repl13 = '\\3'
-str13 = re.sub(find11, repl11, str12)
-str14 = re.sub(find11, repl12, str12)
-str15 = re.sub(find11, repl13, str12)
+# assemblying new marker lines
+pat7 = r'(^\d*) (.*)'
+repl8 = fcp2 + '\\1' + fcp3 + '\\2' + fcp4
+fcp5 = re.sub(pat7, repl8, mrk4, flags=re.MULTILINE)
 
-#assemblying fcpxml code
-find12 = '(^\d*) (.*)'
-repl14 = str13 + '\\1' + str14 + '\\2' + str15
-str16 = re.sub(find12, repl14, str9, flags=re.MULTILINE)
+# assemblying fcpxml code
+pat8 = r'(^\s*<marker.*$)'
+repl8 = fcp5 + '\n\\1'
+fcp6 = re.sub(pat8, repl8, fcp, 1, flags=re.MULTILINE)
 
-#assemblying fcpxml code
-find13 = '(^\s*<marker.*$)'
-repl15 = str16 + '\n\\1'
-str17 = re.sub(find13, repl15, fcpx, 1, flags=re.MULTILINE)
-
-# print(y)
-with open('export.fcpxml', 'w') as f:
-    f.write(str17)
+# writing to a new .fcpxml file
+with open('export.fcpxml', 'w') as newfile:
+    newfile.write(fcp6)
