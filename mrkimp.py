@@ -7,11 +7,11 @@ import os.path
 
 # intializing .txt file with a list of markers
 mrk = open('markers.txt')
-mrk = markers.read()
+mrk = mrk.read()
 
 # intializing .fcpxml file with at least 1 marker
 fcpx = open('import.fcpxml')
-fcpx = fcp.read()
+fcpx = fcpx.read()
 
 # Finding timecode and wrap with special symbols "~" and "#"
 find0 = '(\d{1,2}:\d{1,2}:\d{1,2}|\d{1,2}:\d{1,2})'
