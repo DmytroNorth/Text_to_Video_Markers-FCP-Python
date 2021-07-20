@@ -1,14 +1,18 @@
 # !/usr/bin/env python3
 
 import re
+import os
 from datetime import datetime, timedelta
 
 # intializing .txt file with a list of markers
-mrk = open('videomarkers.txt').read()
-# mrk = mrk.read()
+txt1 = 'videomarkers.txt'
+path1 = os.path.join(os.path.dirname(__file__), txt1)
+mrk = open(path1).read()
 
 # intializing .fcpxml file with at least 1 marker
-fcp = open('clip.fcpxml').read()
+xml1 = 'clip.fcpxml'
+path2 = os.path.join(os.path.dirname(__file__), xml1)
+fcp = open(path2).read()
 
 # moving lines without timecode to a previous line
 pat1 = r'\n(^\D+?$)'
@@ -67,5 +71,6 @@ repl8 = fcp5 + '\n\\1'
 fcp6 = re.sub(pat8, repl8, fcp, 1, flags=re.MULTILINE)
 
 # writing to a new .fcpxml file
-with open('export.fcpxml', 'w') as newfile:
+xml2 = os.path.join(os.path.dirname(__file__), 'export.fcpxml')
+with open(xml2, 'w') as newfile:
     newfile.write(fcp6)
