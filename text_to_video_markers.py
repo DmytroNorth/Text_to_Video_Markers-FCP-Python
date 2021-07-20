@@ -2,7 +2,6 @@
 
 import re
 from datetime import datetime, timedelta
-import os
 
 # intializing .txt file with a list of markers
 mrk = open('videomarkers.txt').read()
