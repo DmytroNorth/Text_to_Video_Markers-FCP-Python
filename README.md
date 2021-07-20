@@ -68,8 +68,7 @@ It was originally built simply by using a stack of **regular expressions** execu
 
 ## 4. Installation
 
-1. Download **`text_to_video_markers.py`** file from this GitHub repository.
-2. Download and install the latest version of [Python](https://www.python.org/downloads/macOS). It will include **Python Launcher.app** to easily execute python files.
+Download **`text_to_video_markers.py`** file from this GitHub repository.
 
 ## 5. Usage
 
@@ -124,11 +123,15 @@ Paste the text into a text editor, then save it as `videomarkers.txt`, and move 
 
 ### 5.3 Launch Python script
 
-Before proceeding with the next step make sure you have [Python](https://www.python.org/downloads/macOS) installed, as instructed in the [Installation](#installation) section above.
-Right-click on `text_to_video_markers.py` file and choose `Open with -> Python Launcher.app`. This will run the script and create `export.fcpxml` file in the same folder.
+Open **Terminal.app**. Type `python`, add `space`, then drag and drop `text_to_video_markers.py` and press `Return`.
+
+![run python script with terminal](png/trm2.png)
+
+Alternatively you can instal the latest version of [Python](https://www.python.org/downloads/macOS). Right-click on `text_to_video_markers.py` file and choose `Open with -> Python Launcher.app`.
 
 ![open python file with python launcher](png/pylaunch.png)
 
+Either method will run the script and create `export.fcpxml` file in the same folder.
 ### 5.4 Open export.fcpxml with FinalCut Pro
 
 Select newly created `export.fcpxml` file and `Open with -> FinalCut Pro`. Upon opening choose the original library, then `Keep Both`. This will create the second project with `your_original_name_1` that will include all the edits specified in `videomarkers.txt`.
