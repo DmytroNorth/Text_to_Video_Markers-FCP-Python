@@ -1,6 +1,6 @@
 # Text to Video Markers FCP - Python
 
-![main2](png/main2.png)
+![Text to Video Markers FCP - Python](png/main2.png)
 
 This python file **marks a video clip with comments** based on **human-written instructions** inside the FinalCut Pro video editor.
 
@@ -57,14 +57,14 @@ Once added, the markers stay attached to the actual clips no matter where those 
 I first created this workflow when I was Directing and Video Editing TV mini-series. Since deadlines were extremely tight I was looking at every opportunity to speed up the delivery times while maintaining high quality. I later used it for commercial Videography projects. This solution fits my workflow very well and has proven to be very useful.
 
 ### 2.4 Development history
-
 It was originally built simply by using a stack of **regular expressions** executed in the TextSoap.app along with some operations in Excel and copy-pasting the code manually. Later most of the steps were combined in a single Python script that is presented here.
 
 ## 3. Technologies Used
+* **`Python 3.9.4`**, compatible with `Python 2.7` and above
+* **`datetime`** integrated module to work with date and time
+* **`re`** integrated regular expression operations module
+* **`os`** a portable way of using operating system dependent functionality
 
-- **`Python 3.9.4`**, compatible with `Python 2.7` and above
-- **`datetime`** integrated module to work with date and time
-- **`re`** integrated regular expression operations module
 
 ## 4. Installation
 
