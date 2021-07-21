@@ -62,7 +62,7 @@ It was originally built simply by using a stack of **regular expressions** execu
 
 ## 3. Technologies Used
 
-- **`Python 3.9.4`**
+- **`Python 3.9.4`**, compatible with `Python 2.7` and above
 - **`datetime`** integrated module to work with date and time
 - **`re`** integrated regular expression operations module
 
@@ -119,13 +119,13 @@ As you can see the formatting can be quite loose.
 
 #### 5.2.2 Rename and move .txt file
 
-Paste the text into a text editor, then save it as `videomarkers.txt`, and move the file into the same folder `with clip.fcpxml` and `text_to_video_markers.py`.
+Save the text as `videomarkers.txt`, and move the file into the same folder with `clip.fcpxml` and `text_to_video_markers.py`.
 
 ### 5.3 Launch Python script
 
 Open **Terminal.app**. Type `python`, add `space`, then drag and drop `text_to_video_markers.py` and press `Return`.
 
-![run python script with terminal](png/trm2.png)
+![run python script with terminal](png/trm3.png)
 
 Alternatively you can instal the latest version of [Python](https://www.python.org/downloads/macOS). Right-click on `text_to_video_markers.py` file and choose `Open with -> Python Launcher.app`.
 
@@ -146,22 +146,17 @@ The project is: **_complete_**
 I am no longer working on it since I am not working for TV any longer. But if you have some ideas or want me to modify something [contact me](#contact) and we should be able to collaborate.
 
 ## 7. Known Limitations
-
-- The script only runs with **Python 3** installed.
-- **`videomarkers.txt`** file must contain two or more **two timecodes** per line.
-- .fcpxml must have one or more **markers**.
-- Input files must be named **`clip.fcpxml`** and **`videomarkers.txt`**.
-- All three files (`text_to_video_markers.py`, `clip.fcpxml`, `videomarkers.txt`) must be located in the **same folder**.
-- Python launcher won't run
-- Run with terminal?
-
+* Tested in **Mac OS** only
+* **`videomarkers.txt`** file must contain two or more **two timecodes** per line.
+* .fcpxml must have one or more **markers**.
+* Input files must be named **`clip.fcpxml`** and **`videomarkers.txt`**.
+* All three files (`text_to_video_markers.py`, `clip.fcpxml`, `videomarkers.txt`) must be located in the **same folder**.
 ## 8. Room for Improvement
-
-- **Testing** and logging the issues.
-- Adding support for compatibility with **multiple** distinct compound and regular clips.
-- Making an **executable file** without the need to install `Python 3`.
-- **Developing GUI** to be able to specify .txt and .fcpxml input files with any name and location.
-- Building a **web app**.
+* **Testing** and logging the issues.
+* Adding support for compatibility with **multiple** distinct compound and regular clips.
+* Making this python script into an **executable file**.
+* **Developing GUI** to be able to specify .txt and .fcpxml input files with any name and location.
+* Building a **web app**.
 
 ## 9. License
 

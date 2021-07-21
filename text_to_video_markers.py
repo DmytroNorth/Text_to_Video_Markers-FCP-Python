@@ -5,14 +5,14 @@ import os
 from datetime import datetime, timedelta
 
 # intializing .txt file with a list of markers
-txt1 = 'videomarkers.txt'
-path1 = os.path.join(os.path.dirname(__file__), txt1)
-mrk = open(path1).read()
+inputtxt = 'videomarkers.txt'
+txtpath = os.path.join(os.path.dirname(__file__), inputtxt)
+mrk = open(txtpath).read()
 
 # intializing .fcpxml file with at least 1 marker
-xml1 = 'clip.fcpxml'
-path2 = os.path.join(os.path.dirname(__file__), xml1)
-fcp = open(path2).read()
+inputxml = 'clip.fcpxml'
+xmlpath = os.path.join(os.path.dirname(__file__), inputxml)
+fcp = open(xmlpath).read()
 
 # moving lines without timecode to a previous line
 pat1 = r'\n(^\D+?$)'
