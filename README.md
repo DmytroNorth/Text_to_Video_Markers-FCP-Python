@@ -80,7 +80,7 @@ In FinalCut Pro create a `New Project` and load clips into the timeline. In a sa
 
 #### 5.1.2 Create and compound clip and 
 
-Now `Select all`, choose `File -> New -> Compound Clip`, and make at least one cut of the newly created compound clip.
+Now `Select all`, choose `File -> New -> Compound Clip`, and make at least one marker on the newly created compound clip by hitting "M" key.
 
 ![fcp new compound clip](png/comp.png)
 
