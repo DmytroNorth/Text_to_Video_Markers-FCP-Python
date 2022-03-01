@@ -147,8 +147,7 @@ I am no longer working on it since I am not working for TV any longer. But if yo
 
 ## 7. Known Limitations
 * Tested in **Mac OS** only
-* **`videomarkers.txt`** file must contain two or more **two timecodes** per line.
-* .fcpxml must have one or more **markers**.
+* The input .fcpxml file must have at least one **marker**.
 * Input files must be named **`clip.fcpxml`** and **`videomarkers.txt`**.
 * All three files (`text_to_video_markers.py`, `clip.fcpxml`, `videomarkers.txt`) must be located in the **same folder**.
 ## 8. Room for Improvement
